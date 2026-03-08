@@ -1,37 +1,197 @@
-# Automação de Testes com JEST e MongoDB
-Este projeto demonstra uma aplicação de testes automatizados utilizando JEST para uma API de usuários que interage com o banco de dados MongoDB. Os testes cobrem funcionalidades básicas como encontrar todos os usuários e encontrar um usuário específico por ID, utilizando a biblioteca superagent para as requisições HTTP.
-## JEST
-![Mobile 1](https://miro.medium.com/v2/resize:fit:700/1*M0tzk-tfDQP3mrVGcoT5-A.png)
+# Automated API Testing Framework (Jest + MongoDB)
 
-# Dependências
-Para rodar este projeto, você precisará ter instalado em sua máquina:
+Automated testing project demonstrating how to validate REST API behavior using **Jest**, **MongoDB**, and HTTP request testing.
 
-Node.js
+This project shows how backend teams can build a reliable automated testing strategy to validate API responses, database interactions, and error handling before code reaches production.
+
+---
+
+# Problem
+
+Backend APIs that interact with databases can fail in several ways:
+
+- incorrect data retrieval
+- unexpected API responses
+- failures when querying specific records
+- regressions introduced by new code
+
+Without automated testing, these issues may reach production and impact system reliability.
+
+Development teams therefore need a strategy to **validate API behavior automatically and consistently**.
+
+---
+
+# Solution
+
+This project demonstrates how to implement an **automated testing framework** using **Jest** to validate a user API connected to a **MongoDB database**.
+
+The test suite verifies:
+
+- retrieving all users
+- retrieving a specific user by ID
+- validating API responses
+- handling cases where users are not found
+
+HTTP requests are simulated using the **Superagent** library, allowing the tests to interact with the API the same way a real client would.
+
+---
+
+# Testing Architecture
+
+The following diagram illustrates how the automated testing framework is structured.
+
+It highlights three key testing layers:
+
+1️⃣ **Testing Architecture Diagram** – shows how Jest interacts with the API and database  
+2️⃣ **Test Pyramid Visual** – demonstrates the testing strategy (unit → API → integration)  
+3️⃣ **API Testing Flow** – explains how HTTP requests are executed and validated
+
+![Testing Architecture](https://github.com/Thiago771414/imagensProjetos/blob/main/slices/mobile/jest.png)
+
+---
+
+# Test Strategy
+
+The testing approach follows a layered structure commonly used in professional software development teams.
+
+### Unit Tests
+
+Validate isolated logic such as:
+
+- greeting functions
+- math operations
+- number validation
+
+These tests ensure core logic works independently from external systems.
+
+---
+
+### API Tests
+
+Validate REST endpoints using HTTP requests.
+
+The tests simulate real client interactions with the API using **Superagent**, ensuring:
+
+- correct responses
+- proper status codes
+- correct user retrieval
+
+---
+
+### Database Tests
+
+Validate persistence logic and interactions with **MongoDB**, ensuring that:
+
+- queries return expected results
+- data retrieval works correctly
+- invalid queries are handled properly.
+
+---
+# API Test Flow
+
+The automated tests simulate the behavior of a real API client.
+The flow is:
+---
+
+```bash
+Jest Test
+↓
+HTTP Request (Superagent)
+↓
+User API
+↓
 MongoDB
-Jest
-Superagent
-Você pode instalar o Jest e o Superagent via npm com os seguintes comandos:
-````javascript
+↓
+Response Validation
+```
+---
+
+This approach ensures that the API behaves correctly when interacting with the database.
+
+---
+
+# Project Structure
+
+```bash
+project/
+├── greeting/
+├── mathOperations/
+├── par-numero/
+├── INTEGRATION-TEST/
+├── MONGO-DB-TEST/
+├── user-repository/
+├── package.json
+└── README.md
+```
+---
+
+Each directory demonstrates a different testing strategy.
+
+---
+
+# Technology Stack
+
+Backend Testing
+
+- Node.js
+- Jest
+- MongoDB
+- Superagent
+
+---
+
+# Installation
+
+Install the dependencies:
+
+```bash
 npm install --save-dev jest
 npm install superagent
-````
-# Configuração
-Antes de executar os testes, certifique-se de que o MongoDB está rodando localmente na sua máquina. Se necessário, ajuste a string de conexão do MongoDB dentro do seu projeto conforme o seu ambiente.
+```
+---
+# Configuration
 
-# Estrutura do Projeto
-O código fonte principal da API está localizado no arquivo user-api.js, que contém as funções para buscar todos os usuários e buscar um usuário por ID utilizando a API externa JSONPlaceholder como exemplo.
+Before running the tests, ensure MongoDB is running locally.
 
-Os testes estão definidos no arquivo user-api.test.js, que utiliza o Jest para definir e executar os casos de teste para as funcionalidades fornecidas pela UserApi.
+Adjust the MongoDB connection string if necessary.
 
-# Como Executar os Testes
-Para executar os testes, navegue até o diretório raiz do projeto pelo terminal e execute o seguinte comando:
-````javascript
+Running the Tests
+
+Navigate to the project root directory and run:
+```bash
 npm test
-````
-Este comando irá iniciar o Jest, que por sua vez executará todos os testes definidos no arquivo user-api.test.js. Os testes vão verificar se a aplicação consegue retornar todos os usuários e encontrar um usuário específico pelo ID, além de tratar corretamente os casos em que um usuário não é encontrado.
+```
+Jest will automatically execute all test cases defined in the project.
 
-# Contribuições
-Contribuições para este projeto são bem-vindas. Se você encontrou um bug ou tem uma sugestão de melhoria, por favor, abra uma issue ou envie um pull request com suas modificações.
+The results will show whether the API:
 
-# Licença
-Este projeto é distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+returns all users correctly
+
+returns a specific user by ID
+
+handles missing users properly
+
+Business Value
+
+Automated testing frameworks like this help teams:
+
+detect bugs early
+
+prevent regressions
+
+ensure API reliability
+
+improve deployment confidence
+
+support CI/CD pipelines
+
+This ensures backend services remain stable, predictable, and production-ready.
+
+#Author
+
+Thiago Reis Lima
+Software Engineer
+LinkedIn
+```bash
+[npm test](https://www.linkedin.com/in/thiago-lima-2a5896166/)
+```
