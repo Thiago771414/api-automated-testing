@@ -1,5 +1,11 @@
 # Automated API Testing Framework (Jest + MongoDB)
 
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Jest](https://img.shields.io/badge/Tested%20With-Jest-red)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-green)
+![Testing](https://img.shields.io/badge/Testing-Automated-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 Automated testing project demonstrating how to validate REST API behavior using **Jest**, **MongoDB**, and HTTP request testing.
 
 This project shows how backend teams can build a reliable automated testing strategy to validate API responses, database interactions, and error handling before code reaches production.
@@ -46,7 +52,7 @@ It highlights three key testing layers:
 2️⃣ **Test Pyramid Visual** – demonstrates the testing strategy (unit → API → integration)  
 3️⃣ **API Testing Flow** – explains how HTTP requests are executed and validated
 
-![Testing Architecture](https://github.com/Thiago771414/imagensProjetos/blob/main/slices/mobile/jest.png)
+![Testing Architecture](https://raw.githubusercontent.com/Thiago771414/imagensProjetos/main/slices/mobile/jest.png)
 
 ---
 
@@ -156,6 +162,20 @@ Before running the tests, ensure MongoDB is running locally.
 Adjust the MongoDB connection string if necessary.
 
 Running the Tests
+# Test Execution Example
+
+Example output when running the test suite:
+
+```bash
+PASS greeting.spec.js
+PASS mathOperations.spec.js
+PASS user-api.spec.js
+PASS user-repository.spec.js
+
+Test Suites: 4 passed
+Tests: 12 passed
+Time: 2.1s
+```
 
 Navigate to the project root directory and run:
 ```bash
@@ -193,5 +213,5 @@ Thiago Reis Lima
 Software Engineer
 LinkedIn
 ```bash
-[npm test](https://www.linkedin.com/in/thiago-lima-2a5896166/)
+https://www.linkedin.com/in/thiago-lima-2a5896166
 ```
