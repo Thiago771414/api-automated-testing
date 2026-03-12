@@ -10,6 +10,13 @@ Automated testing project demonstrating how to validate REST API behavior using 
 
 This project shows how backend teams can build a reliable automated testing strategy to validate API responses, database interactions, and error handling before code reaches production.
 
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Thiago771414/imagensProjetos/main/slices/mobile/jest.png" width="900">
+</p>
+
 ---
 
 # Problem
@@ -51,8 +58,6 @@ It highlights three key testing layers:
 1️⃣ **Testing Architecture Diagram** – shows how Jest interacts with the API and database  
 2️⃣ **Test Pyramid Visual** – demonstrates the testing strategy (unit → API → integration)  
 3️⃣ **API Testing Flow** – explains how HTTP requests are executed and validated
-
-![Testing Architecture](https://raw.githubusercontent.com/Thiago771414/imagensProjetos/main/slices/mobile/jest.png)
 
 ---
 
